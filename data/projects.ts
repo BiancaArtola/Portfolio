@@ -3,37 +3,44 @@
 export const projectData = [
   {
     id: 1,
-    title: "Todo List App",
+    title: "Search for a court",
     description:
-      "A simple Todo List App built with JavaScript. All datas are stored in localstorage. It helps users check list out their plans and tick as they do them.",
-    gitHubLink: "https://github.com/olawanlejoel/Todo-List-App",
+      "A mobile application for Android users that allows the rental of courts in the city of Bahía Blanca, quickly, easily, and safely.",
+    gitHubLink: "https://github.com/BiancaArtola/finalproject",
   },
   {
     id: 2,
-    title: "Books Library App",
+    title: "Upload sports",
     description:
-      "A simple Book Library App built with JavaScript. It helps readers have a good list of books they are either currently reading or have finished reading.",
-    gitHubLink: "https://github.com/olawanlejoel/Book-Library",
+      "A website made to provide a method for loading information into a database. This is only a complement to the application used for the rental of sports field. ",
+    gitHubLink: "https://github.com/BiancaArtola/Upload-sports-fields",
   },
   {
     id: 3,
-    title: "Quotes Generator",
+    title: "Crawler",
     description:
-      "Helps you generate quotes from about 1600 quotes written by different authors . Quotes are automatically copied to your clipboards.",
-    gitHubLink: "https://github.com/olawanlejoel/random-quote-generator",
+      "A crawler that searches three different websites for information on house and apartment rentals",
+    gitHubLink: "https://github.com/BiancaArtola/CrawlerProject",
   },
   {
     id: 4,
-    title: "Password Generator",
+    title: "Text intersection",
     description:
-      "Helps you generates random passwords, you can select what you want your password to entail and also you can copy generated password to clipboard.",
-    gitHubLink: "https://github.com/olawanlejoel/Password-Generator",
+      "A script that finds the intersecting words between two input strings.",
+    gitHubLink: "https://github.com/BiancaArtola/text-intersection",
   },
   {
     id: 5,
-    title: "Twitter UI Clone",
+    title: "Search for Plans in a Mine",
     description:
-      "Simple Twitter UI clone built with TailwindCSS and Vue Js. This covers only the homepage of Twitter UI. This is cool to get started with TailwindCSS as it helps understand basic concepts.",
-    gitHubLink: "https://github.com/olawanlejoel/TwitterUI-clone",
+      "A search algorithm in Prolog that implements the strategy of the A* method.",
+    gitHubLink: "https://github.com/BiancaArtola/Busqueda-Planes-Mina",
+  },
+  {
+    id: 6,
+    title: "Search movies website",
+    description:
+      "Through this website you can search for movies through an API. It is a very simple website, developed in React.",
+    gitHubLink: "https://github.com/BiancaArtola/Search-Movies",
   },
 ];

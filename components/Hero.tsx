@@ -5,8 +5,9 @@ const Hero = () => (
     <Image
       src="/images/profile.jpeg"
       className="profile-img"
-      width={300}
-      height={300}
+      key="image-key-profile"
+      width={1000}
+      height={1000}
       alt="Bianca's personal headshot"
     />
     <div className="hero-text">
@@ -25,7 +26,7 @@ const Hero = () => (
           <i className="fa-brands fa-github"></i>
         </a>
         <a
-          href="https://www.linkedin.com/in/biancaartola/"
+          href="https://www.linkedin.com/in/bianca-artola/"
           aria-label="LinkedIn"
           target="_blank"
           rel="noopener noreferrer"
