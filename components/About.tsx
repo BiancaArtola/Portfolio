@@ -6,7 +6,7 @@ const About = () => (
     <div className="flex-about">
       <div className="about-text">
         <p>
-          I&nbsp;m Bianca, a passionate System Engineer specializing in
+          I&apos;m Bianca, a passionate System Engineer specializing in
           front-end development. Graduating from Universidad Nacional del Sur in
           2020, I have since dedicated myself to creating captivating user
           experiences through my expertise in React, NextJS, Typescript,
@@ -16,7 +16,7 @@ const About = () => (
           and skills in the ever-evolving tech landscape.
         </p>
         <p>
-          During my career, I&nbsp;ve held two significant positions. At
+          During my career, I&apos;ve held two significant positions. At
           Cooperativa Obrera, I developed a mobile app using Ionic, Angular, and
           JavaScript, gaining valuable insights into mobile app development and
           honing my front-end skills. Currently, at Teladoc Health for the past

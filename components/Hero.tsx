@@ -11,9 +11,9 @@ const Hero = () => (
       alt="Bianca's personal headshot"
     />
     <div className="hero-text">
-      <h1>Hey, I&nbsp;m Bianca 👋</h1>
+      <h1>Hey, I&apos;m Bianca 👋</h1>
       <p>
-        I&nbsp;m a software developer based in Bahia Blanca, Argentina. I
+        I&apos;m a software developer based in Bahia Blanca, Argentina. I
         specialize in front-end development.
       </p>
       <div className="social-icons">
