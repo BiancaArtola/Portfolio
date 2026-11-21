@@ -1,3 +1,4 @@
+import { Badge } from "farol-ui";
 import { spokenLanguages } from "../data/languages";
 import CareerList from "./CareerList";
 import CodeCard from "./CodeCard";
@@ -33,8 +34,10 @@ const About = () => {
       <h3 className="about-subtitle">{t.about.languagesTitle}</h3>
       <ul className="skills-chips">
         {spokenLanguages.map((spoken) => (
-          <li className="skill-chip" key={spoken.id}>
-            {spoken.names[language]} · {spoken.levels[language]}
+          <li key={spoken.id}>
+            <Badge>
+              {spoken.names[language]} · {spoken.levels[language]}
+            </Badge>
           </li>
         ))}
       </ul>

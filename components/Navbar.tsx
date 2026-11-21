@@ -1,8 +1,8 @@
+import { Button, useTheme } from "farol-ui";
 import Link from "next/link";
 import { CV_FILES, PROFILE } from "../data/profile";
 import Icon from "./Icon";
 import { useLanguage } from "./LanguageContext";
-import { useTheme } from "./ThemeContext";
 
 const Navbar = () => {
   const { language, t, toggleLanguage } = useLanguage();
@@ -24,22 +24,22 @@ const Navbar = () => {
         </a>
       </nav>
       <div className="nav-actions">
-        <button
-          type="button"
-          className="nav-button"
+        <Button
+          variant="secondary"
+          size="sm"
           onClick={toggleTheme}
           aria-label={isDark ? t.theme.toLight : t.theme.toDark}
         >
           <Icon name={isDark ? "sun" : "moon"} size={18} />
-        </button>
-        <button
-          type="button"
-          className="nav-button"
+        </Button>
+        <Button
+          variant="secondary"
+          size="sm"
           onClick={toggleLanguage}
           aria-label={t.language.label}
         >
           <Icon name="language" size={18} /> {t.language.switchTo}
-        </button>
+        </Button>
       </div>
     </header>
   );

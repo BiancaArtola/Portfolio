@@ -1,3 +1,4 @@
+import { Badge } from "farol-ui";
 import { getSkillLabel, skillGroups } from "../data/skills";
 import { useLanguage } from "./LanguageContext";
 
@@ -14,8 +15,8 @@ const Skills = () => {
             {group.items.map((item) => {
               const label = getSkillLabel(item, language);
               return (
-                <li className="skill-chip" key={label}>
-                  {label}
+                <li key={label}>
+                  <Badge>{label}</Badge>
                 </li>
               );
             })}

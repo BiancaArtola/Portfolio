@@ -1,12 +1,13 @@
+import { getThemeInitScript } from "farol-ui";
 import { Html, Head, Main, NextScript } from "next/document";
-import { THEME_INIT_SCRIPT } from "../components/ThemeContext";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        {/* Aplica el tema guardado antes de pintar para evitar el parpadeo. */}
+        <script dangerouslySetInnerHTML={{ __html: getThemeInitScript() }} />
       </Head>
       <body>
         <Main />

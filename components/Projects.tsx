@@ -1,3 +1,4 @@
+import { Card } from "farol-ui";
 import Link from "next/link";
 import { projectData } from "../data/projects";
 import Icon from "./Icon";
@@ -11,35 +12,40 @@ const Projects = () => {
       <h2>{t.projects.title}</h2>
       <div className="projects-grid">
         {projectData.map((project) => (
-          <article className="project-card" key={project.slug}>
-            <h3>{project.title}</h3>
+          <Card
+            key={project.slug}
+            title={project.title}
+            footer={
+              <div className="project-links">
+                <Link href={`/projects/${project.slug}`} className="text-link">
+                  {t.projects.viewCaseStudy}{" "}
+                  <Icon name="arrow-right" size={16} />
+                </Link>
+                {project.gitHubLink ? (
+                  <a
+                    href={project.gitHubLink}
+                    aria-label={`${t.projects.viewCode}: ${project.title}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon name="github" size={18} />
+                  </a>
+                ) : (
+                  <span
+                    className="project-private"
+                    title={t.projects.privateRepo}
+                    role="img"
+                    aria-label={t.projects.privateRepo}
+                  >
+                    <Icon name="lock" size={16} />
+                  </span>
+                )}
+              </div>
+            }
+          >
             <p>{project.summary[language]}</p>
             <p className="project-stack">{project.stack.join(" · ")}</p>
-            <div className="project-links">
-              <Link href={`/projects/${project.slug}`} className="text-link">
-                {t.projects.viewCaseStudy} <Icon name="arrow-right" size={16} />
-              </Link>
-              {project.gitHubLink ? (
-                <a
-                  href={project.gitHubLink}
-                  aria-label={`${t.projects.viewCode}: ${project.title}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon name="github" size={18} />
-                </a>
-              ) : (
-                <span
-                  className="project-private"
-                  title={t.projects.privateRepo}
-                  role="img"
-                  aria-label={t.projects.privateRepo}
-                >
-                  <Icon name="lock" size={16} />
-                </span>
-              )}
-            </div>
-          </article>
+          </Card>
         ))}
       </div>
     </section>

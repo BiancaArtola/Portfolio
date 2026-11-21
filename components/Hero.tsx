@@ -1,3 +1,4 @@
+import { ButtonLink, buttonClassName } from "farol-ui";
 import Image from "next/image";
 import Link from "next/link";
 import { CV_FILES, PROFILE } from "../data/profile";
@@ -23,12 +24,13 @@ const Hero = () => {
         <p className="hero-role">{t.hero.role} · React · Vue.js · TypeScript</p>
         <p className="hero-tagline">{t.hero.tagline}</p>
         <div className="hero-actions">
-          <Link href="/#projects" className="cta-btn">
+          <Link href="/#projects" className={buttonClassName()}>
             {t.hero.viewProjects}
           </Link>
-          <a href={CV_FILES[language]} download className="cta-btn secondary">
-            <Icon name="download" size={16} /> {t.hero.downloadCv}
-          </a>
+          <ButtonLink href={CV_FILES[language]} download variant="secondary">
+            <Icon name="download" size={16} />
+            {t.hero.downloadCv}
+          </ButtonLink>
         </div>
         <div className="social-icons">
           <a
