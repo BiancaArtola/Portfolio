@@ -1,46 +1,41 @@
-// components/data.js
+import { Language } from "./translations";
 
-export const projectData = [
+export interface Project {
+  id: number;
+  title: string;
+  description: Record<Language, string>;
+  stack: string[];
+  /** Sin link cuando el repositorio es privado. */
+  gitHubLink?: string;
+}
+
+export const projectData: Project[] = [
   {
     id: 1,
-    title: "Search for a court",
-    description:
-      "A mobile application for Android users that allows the rental of courts in the city of Bahía Blanca, quickly, easily, and safely.",
-    gitHubLink: "https://github.com/BiancaArtola/finalproject",
+    title: "Facturador RCEL",
+    description: {
+      en: "Chrome extension that automates issuing invoices on Argentina's tax portal (ARCA). It reads payments from screenshots (OCR), PDFs or Excel files, builds a batch and loads it screen by screen, with multi-issuer profiles. Unit and end-to-end tested.",
+      es: "Extensión de Chrome que automatiza la emisión de facturas en el portal de ARCA. Lee cobros desde capturas (OCR), PDF o Excel, arma un lote y lo carga pantalla por pantalla, con perfiles de varios emisores. Probada con tests unitarios y end-to-end.",
+    },
+    stack: ["React", "TypeScript", "WXT", "Vitest", "Playwright"],
   },
   {
     id: 2,
-    title: "Upload sports",
-    description:
-      "A website made to provide a method for loading information into a database. This is only a complement to the application used for the rental of sports field. ",
-    gitHubLink: "https://github.com/BiancaArtola/Upload-sports-fields",
+    title: "MiPlata",
+    description: {
+      en: "Personal finance app to track expenses, fixed costs and categories in ARS and USD, with exchange rates by month and Excel/CSV import.",
+      es: "App de finanzas personales para registrar gastos, gastos fijos y categorías en ARS y USD, con cotizaciones por mes e importación desde Excel/CSV.",
+    },
+    stack: ["React", "TypeScript", "Vite", "Supabase"],
   },
   {
     id: 3,
-    title: "Crawler",
-    description:
-      "A crawler that searches three different websites for information on house and apartment rentals",
-    gitHubLink: "https://github.com/BiancaArtola/CrawlerProject",
-  },
-  {
-    id: 4,
-    title: "Text intersection",
-    description:
-      "A script that finds the intersecting words between two input strings.",
-    gitHubLink: "https://github.com/BiancaArtola/text-intersection",
-  },
-  {
-    id: 5,
-    title: "Search for Plans in a Mine",
-    description:
-      "A search algorithm in Prolog that implements the strategy of the A* method.",
-    gitHubLink: "https://github.com/BiancaArtola/Busqueda-Planes-Mina",
-  },
-  {
-    id: 6,
-    title: "Search movies website",
-    description:
-      "Through this website you can search for movies through an API. It is a very simple website, developed in React.",
-    gitHubLink: "https://github.com/BiancaArtola/Search-Movies",
+    title: "Final Project: Search for a court",
+    description: {
+      en: "Mobile app for renting sports courts in Bahía Blanca, focused on user-centered design. Includes a companion website to load data.",
+      es: "App móvil para alquilar canchas deportivas en Bahía Blanca, con foco en el diseño centrado en el usuario. Incluye un sitio complementario para cargar datos.",
+    },
+    stack: ["Ionic", "Angular", "Firebase"],
+    gitHubLink: "https://github.com/BiancaArtola/finalproject",
   },
 ];

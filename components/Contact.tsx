@@ -1,14 +1,17 @@
-const Contact = () => (
-  <div className="contact-container">
-    <h2>Get In Touch</h2>
-    <p>
-      If you want us to work together or have any questions, my inbox is always
-      open. Whether I just want to say hi,
-    </p>
-    <a href="mailto:bian.artola@hotmail.com" className="cta-btn">
-      Say Hello
-    </a>
-  </div>
-);
+import { useLanguage } from "./LanguageContext";
+
+const Contact = () => {
+  const { t } = useLanguage();
+
+  return (
+    <div className="contact-container">
+      <h2>{t.contact.title}</h2>
+      <p>{t.contact.text}</p>
+      <a href="mailto:bian.artola@hotmail.com" className="cta-btn">
+        {t.contact.button}
+      </a>
+    </div>
+  );
+};
 
 export default Contact;

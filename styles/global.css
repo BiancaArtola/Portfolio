@@ -389,3 +389,97 @@ hr {
   margin-bottom: 1rem;
   text-align: center;
 }
+
+/* Selector de idioma */
+.language-toggle {
+  background: transparent;
+  border: 1px solid #dadadb;
+  color: #dadadb;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  border-color: #ffcc1a;
+  color: #ffcc1a;
+}
+
+/* Trayectoria */
+.about-container .career-title {
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+}
+
+.career-list {
+  border-left: 2px solid #ffcc1a;
+  padding-left: 1rem;
+}
+
+.career-item {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0 1rem;
+  padding: 0.5rem 0;
+}
+
+.career-years {
+  color: #b3b3b3;
+}
+
+.career-stack {
+  grid-column: 2;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+@media screen and (max-width: 768px) {
+  .career-item {
+    grid-template-columns: 1fr;
+  }
+
+  .career-stack {
+    grid-column: 1;
+  }
+}
+
+/* Tecnologías por categoría */
+.skills-group {
+  margin-bottom: 1.5rem;
+}
+
+.skills-group h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  background-color: #dadadb;
+  color: #1d1e20;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.project-card .project-stack {
+  font-size: 0.85rem;
+  color: #ffcc17;
+  margin-top: 0.5rem;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #b3b3b3;
+}

@@ -1,15 +1,14 @@
+import type { AppProps } from "next/app";
 import "../styles/global.css";
 import Layout from "../components/Layout";
+import { LanguageProvider } from "../components/LanguageContext";
 
-export default function App({ Component, pageProps }: IProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <LanguageProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </LanguageProvider>
   );
-}
-
-interface IProps {
-  Component: any;
-  pageProps: any;
 }

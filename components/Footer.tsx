@@ -2,7 +2,7 @@ const Footer = () => (
   <>
     <hr />
     <div className="footer-container">
-      <p>© {new Date().getFullYear()} Bianca&apos;s Portfolio</p>
+      <p>© {new Date().getFullYear()} Bianca Artola</p>
       <div className="social_icons">
         <a
           href="https://github.com/biancaartola"
