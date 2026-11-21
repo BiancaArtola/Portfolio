@@ -1,32 +1,19 @@
 import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
-import { useLanguage } from "@/components/LanguageContext";
+import SeoHead from "@/components/SeoHead";
 
-import Head from "next/head";
-
-const Home = () => {
-  const { t } = useLanguage();
-
-  return (
-    <>
-      <Head>
-        <title>{t.siteTitle}</title>
-        <meta name="description" content={t.siteDescription} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </div>
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <SeoHead />
+    <Hero />
+    <Projects />
+    <About />
+    <Skills />
+    <Contact />
+  </>
+);
 
 export default Home;

@@ -1,23 +1,47 @@
 import Link from "next/link";
+import { CV_FILES, PROFILE } from "../data/profile";
+import Icon from "./Icon";
 import { useLanguage } from "./LanguageContext";
+import { useTheme } from "./ThemeContext";
 
 const Navbar = () => {
-  const { t, toggleLanguage } = useLanguage();
+  const { language, t, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <div className="nav-container">
+    <header className="nav-container">
       <div className="logo">
-        <Link href="/">Bianca Artola</Link>
+        <Link href="/">{PROFILE.name}</Link>
       </div>
-      <button
-        type="button"
-        className="language-toggle"
-        onClick={toggleLanguage}
-        aria-label={t.language.label}
-      >
-        <i className="fa-solid fa-language"></i> {t.language.switchTo}
-      </button>
-    </div>
+      <nav className="nav-links" aria-label="Main">
+        <Link href="/#projects">{t.nav.projects}</Link>
+        <Link href="/#about">{t.nav.about}</Link>
+        <Link href="/#skills">{t.nav.skills}</Link>
+        <Link href="/#contact">{t.nav.contact}</Link>
+        <a href={CV_FILES[language]} download>
+          {t.nav.cv}
+        </a>
+      </nav>
+      <div className="nav-actions">
+        <button
+          type="button"
+          className="nav-button"
+          onClick={toggleTheme}
+          aria-label={isDark ? t.theme.toLight : t.theme.toDark}
+        >
+          <Icon name={isDark ? "sun" : "moon"} size={18} />
+        </button>
+        <button
+          type="button"
+          className="nav-button"
+          onClick={toggleLanguage}
+          aria-label={t.language.label}
+        >
+          <Icon name="language" size={18} /> {t.language.switchTo}
+        </button>
+      </div>
+    </header>
   );
 };
 

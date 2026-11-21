@@ -1,25 +1,28 @@
-import { skillGroups } from "../data/skills";
+import { getSkillLabel, skillGroups } from "../data/skills";
 import { useLanguage } from "./LanguageContext";
 
 const Skills = () => {
   const { language, t } = useLanguage();
 
   return (
-    <div className="skills-container">
+    <section id="skills" className="skills-container">
       <h2>{t.skills.title}</h2>
       {skillGroups.map((group) => (
         <div className="skills-group" key={group.id}>
           <h3>{group.labels[language]}</h3>
           <ul className="skills-chips">
-            {group.items.map((item) => (
-              <li className="skill-chip" key={item}>
-                {item}
-              </li>
-            ))}
+            {group.items.map((item) => {
+              const label = getSkillLabel(item, language);
+              return (
+                <li className="skill-chip" key={label}>
+                  {label}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

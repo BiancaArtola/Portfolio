@@ -1,42 +1,55 @@
 import Image from "next/image";
+import Link from "next/link";
+import { CV_FILES, PROFILE } from "../data/profile";
+import Icon from "./Icon";
 import { useLanguage } from "./LanguageContext";
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
-    <div className="hero-container">
+    <section className="hero-container">
       <Image
         src="/images/profile.jpeg"
         className="profile-img"
         key="image-key-profile"
-        width={1000}
-        height={1000}
+        width={400}
+        height={400}
         alt={t.hero.imageAlt}
+        priority
       />
       <div className="hero-text">
-        <h1>{t.hero.greeting}</h1>
-        <p>{t.hero.intro}</p>
+        <h1>{PROFILE.name}</h1>
+        <p className="hero-role">{t.hero.role} · React · Vue.js · TypeScript</p>
+        <p className="hero-tagline">{t.hero.tagline}</p>
+        <div className="hero-actions">
+          <Link href="/#projects" className="cta-btn">
+            {t.hero.viewProjects}
+          </Link>
+          <a href={CV_FILES[language]} download className="cta-btn secondary">
+            <Icon name="download" size={16} /> {t.hero.downloadCv}
+          </a>
+        </div>
         <div className="social-icons">
           <a
-            href="https://github.com/BiancaArtola"
+            href={PROFILE.github}
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-github"></i>
+            <Icon name="github" size={24} />
           </a>
           <a
-            href="https://www.linkedin.com/in/bianca-artola/"
+            href={PROFILE.linkedin}
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-linkedin"></i>
+            <Icon name="linkedin" size={24} />
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,28 +1,33 @@
+import { PROFILE } from "../data/profile";
+import Icon from "./Icon";
+
 const Footer = () => (
-  <>
+  <footer>
     <hr />
     <div className="footer-container">
-      <p>© {new Date().getFullYear()} Bianca Artola</p>
+      <p>
+        © {new Date().getFullYear()} {PROFILE.name}
+      </p>
       <div className="social_icons">
         <a
-          href="https://github.com/biancaartola"
+          href={PROFILE.github}
           aria-label="GitHub"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-brands fa-github"></i>
+          <Icon name="github" size={24} />
         </a>
         <a
-          href="https://www.linkedin.com/in/bianca-artola/"
+          href={PROFILE.linkedin}
           aria-label="LinkedIn"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-brands fa-linkedin"></i>
+          <Icon name="linkedin" size={24} />
         </a>
       </div>
     </div>
-  </>
+  </footer>
 );
 
 export default Footer;

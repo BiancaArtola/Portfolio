@@ -25,14 +25,22 @@ const readSavedLanguage = (): Language | null => {
   }
 };
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
+export const LanguageProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   // Se arranca en inglés tanto en servidor como en cliente para no romper la hidratación;
   // el idioma guardado o el del navegador se aplica después de montar.
   const [language, setLanguage] = useState<Language>("en");
 
   useEffect(() => {
+    // ?lang=es|en fuerza el idioma sin guardarlo; lo usa la página /cv al generar los PDF.
+    const requested = new URLSearchParams(window.location.search).get("lang");
     const saved = readSavedLanguage();
-    if (saved) {
+    if (requested === "en" || requested === "es") {
+      setLanguage(requested);
+    } else if (saved) {
       setLanguage(saved);
     } else if (navigator.language.toLowerCase().startsWith("es")) {
       setLanguage("es");
